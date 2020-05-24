@@ -11,6 +11,8 @@ export class NumberDisplay {
   }
 
   public displayNumber(numberToDisplay: number, color: Array<RgbColor> | RgbColor): void {
+    this.clear();
+
     switch (numberToDisplay) {
       case 0:
         this.sevenSegmentDisplay.showSegments([0, 1, 2, 4, 5, 6], color);
@@ -36,6 +38,14 @@ export class NumberDisplay {
       default:
         throw new Error(`Error: Only numbers between 0 and 9 can be displayed. ${numberToDisplay} is not between 0 and 9.`);
     }
+  }
+
+  public clear(): void {
+    this.sevenSegmentDisplay.clear();
+  }
+
+  public render(): Promise<void> {
+    return this.sevenSegmentDisplay.render();
   }
 
 }

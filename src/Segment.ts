@@ -22,4 +22,8 @@ export class Segment {
   public setColor(color: RgbColor): void {
     this.ledController.setLeds(this.startIndex, this.amountOfLeds, color);
   }
+
+  public render(): Promise<void> {
+    return this.ledController.render();
+  }
 }

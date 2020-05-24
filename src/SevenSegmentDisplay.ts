@@ -5,8 +5,11 @@ import {RgbColor} from './types/index';
 
 export class SevenSegmentDisplay {
   private segments: Array<Segment> = [];
+  private ledController: LedController;
 
   constructor(ledController: LedController, startIndex: number, amountOfLedsPerSegment: number) {
+    this.ledController = ledController;
+
     for (let index: number = 0; index < 7; index++) {
       this.segments.push(new Segment(ledController, startIndex + index * amountOfLedsPerSegment, amountOfLedsPerSegment));
     }
@@ -32,4 +35,7 @@ export class SevenSegmentDisplay {
     return colors[index % colors.length];
   }
 
+  public render(): Promise<void> {
+    return this.ledController.render();
+  }
 }

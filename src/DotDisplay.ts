@@ -39,6 +39,10 @@ export class DotDisplay {
     this.blink = false;
   }
 
+  public render(): Promise<void> {
+    return this.ledController.render();
+  }
+
   private turnOn(): void {
     setTimeout(async(): Promise<void> => {
       if (!this.blink) {

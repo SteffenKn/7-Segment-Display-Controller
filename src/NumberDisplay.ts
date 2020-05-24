@@ -18,7 +18,7 @@ export class NumberDisplay {
         this.sevenSegmentDisplay.showSegments([0, 1, 2, 4, 5, 6], color);
         break;
       case 1:
-        this.sevenSegmentDisplay.showSegments([3, 6], color);
+        this.sevenSegmentDisplay.showSegments([1, 2, 6], color);
         break;
       case 2:
         this.sevenSegmentDisplay.showSegments([1, 2, 3, 4, 5], color);
@@ -42,7 +42,7 @@ export class NumberDisplay {
         this.sevenSegmentDisplay.showSegments([0, 1, 2, 3, 4, 5, 6], color);
         break;
       case 9:
-        this.sevenSegmentDisplay.showSegments([0, 1, 3, 4, 6], color);
+        this.sevenSegmentDisplay.showSegments([0, 1, 2, 3, 5, 6], color);
         break;
 
       default:

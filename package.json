@@ -1,0 +1,33 @@
+{
+  "name": "7-segment-display-controller",
+  "version": "0.0.1-alpha.2",
+  "description": "",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteffenKn/7-Segment-Display-Controller.git"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "pi",
+    "7-segment",
+    "display",
+    "controller"
+  ],
+  "author": "Steffen Knaup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteffenKn/7-Segment-Display-Controller/issues"
+  },
+  "homepage": "https://github.com/SteffenKn/7-Segment-Display-Controller#readme",
+  "dependencies": {
+    "ws2801-pi": "0.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "tslint": "6.1.2",
+    "typescript": "3.9.3"
+  }
+}

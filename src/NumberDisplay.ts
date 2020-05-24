@@ -16,24 +16,34 @@ export class NumberDisplay {
     switch (numberToDisplay) {
       case 0:
         this.sevenSegmentDisplay.showSegments([0, 1, 2, 4, 5, 6], color);
+        break;
       case 1:
         this.sevenSegmentDisplay.showSegments([3, 6], color);
+        break;
       case 2:
         this.sevenSegmentDisplay.showSegments([1, 2, 3, 4, 5], color);
+        break;
       case 3:
         this.sevenSegmentDisplay.showSegments([1, 2, 3, 5, 6], color);
+        break;
       case 4:
         this.sevenSegmentDisplay.showSegments([0, 2, 3, 6], color);
+        break;
       case 5:
         this.sevenSegmentDisplay.showSegments([0, 1, 3, 5, 6], color);
+        break;
       case 6:
         this.sevenSegmentDisplay.showSegments([0, 1, 3, 4, 5, 6], color);
+        break;
       case 7:
         this.sevenSegmentDisplay.showSegments([1, 2, 6], color);
+        break;
       case 8:
         this.sevenSegmentDisplay.showSegments([0, 1, 2, 3, 4, 5, 6], color);
+        break;
       case 9:
         this.sevenSegmentDisplay.showSegments([0, 1, 3, 4, 6], color);
+        break;
 
       default:
         throw new Error(`Error: Only numbers between 0 and 9 can be displayed. ${numberToDisplay} is not between 0 and 9.`);

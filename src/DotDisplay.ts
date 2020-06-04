@@ -51,10 +51,8 @@ export class DotDisplay {
 
       this.ledController.setLeds(this.startIndex, this.amountOfLeds, this.color);
 
-      await this.ledController.render();
-
       this.turnOff();
-    });
+    }, 500);
   }
 
   private turnOff(): void {
@@ -65,10 +63,8 @@ export class DotDisplay {
 
       this.clear();
 
-      await this.ledController.render();
-
       this.turnOn();
-    });
+    }, 500);
   }
 
 }

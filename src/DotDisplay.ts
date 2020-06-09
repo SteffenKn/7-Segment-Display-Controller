@@ -13,6 +13,7 @@ export class DotDisplay {
   private blink: boolean;
 
   private blinkDuration: number = 500;
+  private blinkCallback: Function;
 
   constructor(ledController: LedController, startIndex: number, amountOfLeds: number) {
     this.ledController = ledController;
@@ -31,11 +32,12 @@ export class DotDisplay {
     this.ledController.clearLeds(this.startIndex, this.amountOfLeds);
   }
 
-  public startBlinking(ms?: number): void {
+  public startBlinking(ms?: number, blinkCallback?: Function): void {
     this.blink = true;
     this.blinkDuration = ms;
+    this.blinkCallback = blinkCallback;
 
-    this.turnOn();
+    this.blinkOn();
   }
 
   public stopBlinking(): void {
@@ -46,27 +48,35 @@ export class DotDisplay {
     return this.ledController.render();
   }
 
-  private turnOn(): void {
+  private blinkOn(): void {
     setTimeout(async(): Promise<void> => {
       if (!this.blink) {
         return;
+      }
+
+      if (this.blinkCallback) {
+        this.blinkCallback();
       }
 
       this.ledController.setLeds(this.startIndex, this.amountOfLeds, this.color);
 
-      this.turnOff();
+      this.blinkOff();
     }, this.blinkDuration);
   }
 
-  private turnOff(): void {
+  private blinkOff(): void {
     setTimeout(async(): Promise<void> => {
       if (!this.blink) {
         return;
       }
 
+      if (this.blinkCallback) {
+        this.blinkCallback();
+      }
+
       this.clear();
 
-      this.turnOn();
+      this.blinkOn();
     }, this.blinkDuration);
   }
 

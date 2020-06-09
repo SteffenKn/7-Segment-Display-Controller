@@ -12,6 +12,8 @@ export class DotDisplay {
   private color: RgbColor;
   private blink: boolean;
 
+  private blinkDuration: number = 500;
+
   constructor(ledController: LedController, startIndex: number, amountOfLeds: number) {
     this.ledController = ledController;
 
@@ -29,8 +31,9 @@ export class DotDisplay {
     this.ledController.clearLeds(this.startIndex, this.amountOfLeds);
   }
 
-  public startBlinking(): void {
+  public startBlinking(ms?: number): void {
     this.blink = true;
+    this.blinkDuration = ms;
 
     this.turnOn();
   }
@@ -52,7 +55,7 @@ export class DotDisplay {
       this.ledController.setLeds(this.startIndex, this.amountOfLeds, this.color);
 
       this.turnOff();
-    }, 500);
+    }, this.blinkDuration);
   }
 
   private turnOff(): void {
@@ -64,7 +67,7 @@ export class DotDisplay {
       this.clear();
 
       this.turnOn();
-    }, 500);
+    }, this.blinkDuration);
   }
 
 }

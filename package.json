@@ -8,7 +8,8 @@
     "url": "git+https://github.com/SteffenKn/7-Segment-Display-Controller.git"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "tslint --project ."
   },
   "keywords": [
     "pi",

@@ -1,8 +1,8 @@
-import {LedController} from './LedController';
+import LedController from './LedController';
 
-import { RgbColor } from './types/index';
+import {RgbColor} from './types/index';
 
-export class Segment {
+export default class Segment {
   private ledController: LedController;
 
   private startIndex: number;
@@ -15,12 +15,12 @@ export class Segment {
     this.amountOfLeds = amountOfLeds;
   }
 
-  public clear(): void {
-    this.ledController.clearLeds(this.startIndex, this.amountOfLeds);
+  public on(color: RgbColor): void {
+    this.ledController.setLeds(this.startIndex, this.amountOfLeds, color);
   }
 
-  public setColor(color: RgbColor): void {
-    this.ledController.setLeds(this.startIndex, this.amountOfLeds, color);
+  public off(): void {
+    this.ledController.clearLeds(this.startIndex, this.amountOfLeds);
   }
 
   public render(): Promise<void> {

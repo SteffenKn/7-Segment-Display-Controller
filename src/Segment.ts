@@ -1,8 +1,8 @@
-import LedController from './LedController';
+import {LedController} from './LedController';
 
 import {RgbColor} from './types/index';
 
-export default class Segment {
+export class Segment {
   private ledController: LedController;
 
   private startIndex: number;

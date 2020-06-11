@@ -1,5 +1,5 @@
-import LedController from './LedController';
-import SevenSegmentDisplay from './SevenSegmentDisplay';
+import {LedController} from './LedController';
+import {SevenSegmentDisplay} from './SevenSegmentDisplay';
 
 import {RgbColor} from './types/index';
 

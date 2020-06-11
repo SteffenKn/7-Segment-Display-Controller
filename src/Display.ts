@@ -1,8 +1,8 @@
-import LedController from './LedController';
+import {LedController} from './LedController';
 
 import {RgbColor} from './types/RgbColor';
 
-export default abstract class Display {
+export abstract class Display {
   protected ledController: LedController;
 
   protected startIndex: number;

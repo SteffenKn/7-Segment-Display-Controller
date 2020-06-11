@@ -2,7 +2,7 @@ import LedstripController from 'ws2801-pi';
 
 import {RgbColor} from './types/index';
 
-export default class LedController {
+export class LedController {
 
   private controller: LedstripController;
 

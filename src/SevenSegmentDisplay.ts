@@ -1,12 +1,12 @@
-import Display from './Display';
-import LedController from './LedController';
-import Segment from './Segment';
+import {Display} from './Display';
+import {LedController} from './LedController';
+import {Segment} from './Segment';
 
 import {RgbColor} from './types/index';
 
 const numberOfSegments: number = 7;
 
-export default class SevenSegmentDisplay extends Display {
+export class SevenSegmentDisplay extends Display {
   private segments: Array<Segment> = [];
 
   private lastColors: Array<RgbColor> = [];

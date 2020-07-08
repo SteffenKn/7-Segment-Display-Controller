@@ -11,9 +11,9 @@ export abstract class Display {
   protected color: RgbColor;
   protected lastColor: RgbColor;
 
-  protected isOn: boolean;
+  protected isOn: boolean = false;
 
-  private isBlinking: boolean;
+  private isBlinking: boolean = false;
   private blinkDuration: number = 500;
   private blinkCallback: Function;
 

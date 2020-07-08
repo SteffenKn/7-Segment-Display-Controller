@@ -24,6 +24,7 @@ export class SevenSegmentDisplay extends Display {
 
   public setMultipleColors(colors: Array<RgbColor>): void {
     this.colors = colors;
+    this.lastColors = colors;
 
     if (this.isOn) {
       this.turnBackOn();
@@ -31,12 +32,16 @@ export class SevenSegmentDisplay extends Display {
   }
 
   public off(): void {
+    this.isOn = false;
+
     for (const segment of this.segments) {
       segment.off();
     }
   }
 
   protected showSegments(segmentIndexes: Array<number>, colors?: Array<RgbColor> | RgbColor): void {
+    this.isOn = true;
+
     this.lastSegmentIndexes = segmentIndexes;
 
     for (let index: number = 0; index < segmentIndexes.length; index++) {
@@ -52,6 +57,8 @@ export class SevenSegmentDisplay extends Display {
   }
 
   protected turnBackOn(): void {
+    this.isOn = true;
+
     const colors: Array<RgbColor> | RgbColor = this.lastColors.length > 0 ? this.lastColors : this.lastColor;
 
     this.showSegments(this.lastSegmentIndexes, colors);

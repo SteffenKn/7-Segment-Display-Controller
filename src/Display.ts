@@ -41,6 +41,7 @@ export abstract class Display {
 
   public setColor(color: RgbColor): void {
     this.color = color;
+    this.lastColor = color;
 
     if (this.isOn) {
       this.turnBackOn();

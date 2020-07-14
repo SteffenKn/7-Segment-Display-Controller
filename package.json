@@ -1,6 +1,6 @@
 {
   "name": "7-segment-display-controller",
-  "version": "0.0.1-alpha.16",
+  "version": "0.0.1-alpha.17",
   "description": "",
   "main": "dist/index.js",
   "repository": {

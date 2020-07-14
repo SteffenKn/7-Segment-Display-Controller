@@ -8,8 +8,16 @@ export abstract class Display {
   protected startIndex: number;
   protected amountOfLeds: number;
 
-  protected color: RgbColor;
-  protected lastColor: RgbColor;
+   protected color: RgbColor = {
+     red: 0,
+     green: 255,
+     blue: 0,
+   };
+   protected lastColor: RgbColor = {
+     red: 0,
+     green: 255,
+     blue: 0,
+   };
 
   protected isOn: boolean = false;
 

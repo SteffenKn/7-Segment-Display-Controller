@@ -13,14 +13,20 @@ export class LedController {
   public setLeds(startIndex: number, amountOfLeds: number, color: RgbColor): void {
     for (let index: number = 0; index < amountOfLeds; index++) {
       const ledIndex: number = startIndex + index;
-      this.controller.setLed(ledIndex, color.red, color.green, color.blue);
+      this.controller.setLed(ledIndex, color);
     }
   }
 
   public clearLeds(startIndex: number, amountOfLeds: number): void {
     for (let index: number = 0; index < amountOfLeds; index++) {
       const ledIndex: number = startIndex + index;
-      this.controller.setLed(ledIndex, 0, 0, 0);
+
+      const black: RgbColor = {
+        red: 0,
+        green: 0,
+        blue: 0,
+      };
+      this.controller.setLed(ledIndex, black);
     }
   }
 

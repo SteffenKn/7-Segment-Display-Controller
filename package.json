@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/SteffenKn/7-Segment-Display-Controller#readme",
   "dependencies": {
-    "ws2801-pi": "0.0.10"
+    "ws2801-pi": "1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.0.5",
+    "@types/node": "^14.0.23",
     "tslint": "6.1.2",
-    "typescript": "3.9.3"
+    "typescript": "3.9.6"
   }
 }
